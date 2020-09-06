@@ -1,4 +1,4 @@
-from functions import send, receive, rank, n
+from functions import MPI, send, receive, rank, n
 import random
 
 def display(rank, data, message):
@@ -25,3 +25,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    MPI.Finalize

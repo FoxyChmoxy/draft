@@ -1,4 +1,4 @@
-from functions import send, receive, rank, n
+from functions import MPI, send, receive, rank, n
 
 def main():
     data = None
@@ -13,3 +13,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    MPI.Finalize
