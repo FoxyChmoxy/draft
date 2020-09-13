@@ -2,7 +2,7 @@ from mpi4py import MPI
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
-n = comm.Get_size()
+p = comm.Get_size()
 
 GLOBAL_TAG = 11
 

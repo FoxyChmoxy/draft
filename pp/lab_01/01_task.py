@@ -1,8 +1,8 @@
-from functions import MPI, send, receive, rank, n
+from functions import MPI, send, receive, rank, p
 
 def main():
     data = None
-    if rank == n - 1:
+    if rank == p - 1:
         data = 125
         send(data, rank - 1)
     else:

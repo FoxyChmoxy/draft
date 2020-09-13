@@ -3,7 +3,7 @@ import math as mt
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
-n = comm.Get_size()
+p = comm.Get_size()
 
 GLOBAL_TAG = 11
 
