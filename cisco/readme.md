@@ -119,3 +119,39 @@ switchport mode trunk
 switchport trunk allowed vlan <0-4094>
 wr mem
 ```
+
+## Как узнать корневой коммутатора
+Должен быть текст `This bridge is the root`
+- `sh spanning-tree` - посмотреть STP настройки
+```
+en
+sh spanning-tree
+```
+
+## Как включить режим RSTP
+Эту команду надо использовать во всех коммуматорах, где должен быть протокол RSTP
+- `spanning-tree mode rapid-pvst` - включить режим в RSTP в этом коммутаторе
+```
+en
+conf t
+spanning-tree mode rapid-pvst 
+```
+
+## Агрегирование каналов
+Создаем один логический интерфейс, который объединяет несколько физических интерфейсов.
+- `interface range fa<0/1>-<12>` - настройка сразу нескольких интерфейсов
+- `channel-group <1-6> mode <mode>`
+EtherChannel/Port bundling configuration
+
+Channel Group Modes:
+- `active` - Enable LACP unconditionally
+- `auto` - Enable PAgP only if a PAgP device is detected
+- `desirable` - Enable PAgP uncoditionally
+- `on` - Enable EtherChannel only
+- `passive` - Enable LACP only if a LACP device is detected
+```
+en
+conf t
+interface range fa<0/1>-<12>
+channel-group <1-6> mode <mode>
+```
