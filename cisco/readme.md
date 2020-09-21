@@ -155,3 +155,29 @@ conf t
 interface range fa<0/1>-<12>
 channel-group <1-6> mode <mode>
 ```
+
+## Агрегирование каналов через L3 коммутатор
+На коммутаторе L3 уровня вы ставите режим `active`, а на коммутаторах L2 уровня - `passive`.
+- `channel-protocol lacp` - Select the channel protocol LACP or PAgP
+```
+en
+conf t
+int range fa<0/1>-<12>
+channel-protocol <lacp|pagp>
+channel-group <1-6> mode <mode>
+```
+
+## Посмотреть натсройки EtherChannel
+```
+en
+show etherchannel summary
+```
+
+## Настройка trunk порта
+В случае существовании нескольких `vlan`-ов, `trunk` порт настраивается на ЛОГИЧЕСКОМ интерфейсе.
+```
+en
+conf t
+int port-channel <1-12>
+switchport mode trunk
+```
