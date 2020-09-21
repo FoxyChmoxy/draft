@@ -120,7 +120,7 @@ switchport trunk allowed vlan <0-4094>
 wr mem
 ```
 
-## Как узнать корневой коммутатора
+## Как узнать корневой коммутатор
 Должен быть текст `This bridge is the root`
 - `sh spanning-tree` - посмотреть STP настройки
 ```
@@ -167,7 +167,7 @@ channel-protocol <lacp|pagp>
 channel-group <1-6> mode <mode>
 ```
 
-## Посмотреть натсройки EtherChannel
+## Посмотреть настройки EtherChannel
 ```
 en
 show etherchannel summary
