@@ -1,0 +1,27 @@
+2x2
+
+a   b
+        -> a*d-b*c
+c   d 
+
+-----------------------
+
+3x3
+
+a   b   c
+
+d   e   f   -> a * |e f h j| - b * |d g f j| + c * |d e g h|
+
+g   h   j
+
+-----------------------
+
+4x4
+
+a   b   c   d
+
+e   f   g   h
+                -> a * |f g h k l m p r s| - b * |e j o g l r h m s|...
+j   k   l   m
+
+o   p   r   s

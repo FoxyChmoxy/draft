@@ -181,3 +181,4 @@ conf t
 int port-channel <1-12>
 switchport mode trunk
 ```
+
