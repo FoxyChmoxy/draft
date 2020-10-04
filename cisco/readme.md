@@ -110,7 +110,7 @@ switchport access vlan <0-4094>
 ## Подключить два коммутатора между собой
 Так как коммутаторы находятся в одной модели OSI, нужно использовать кабель Cross-Over. Настройки конфигурации нужно сделать в обоих коммутаторах.
 - `switchport mode trunk` - связь Switch-Switch
-- `switchport trun allowed vlan` - к каким локальным сетям есть доступ
+- `switchport trunk allowed vlan` - к каким локальным сетям есть доступ
 ```
 en
 conf t

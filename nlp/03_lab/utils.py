@@ -16,6 +16,6 @@ def get_data(filename):
 
 def load_data():
     train_x_orig, train_y = get_data('train.txt')
-    test_x_orig, test_y = get_data('test.txt')
+    # test_x_orig, test_y = get_data('test.txt')
     classes = ["Attack", "Run", "Hide and Attack", "Do Nothing"]
-    return train_x_orig, train_y, test_x_orig, test_y, classes
+    return train_x_orig, train_y, classes
