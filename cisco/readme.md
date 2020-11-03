@@ -182,3 +182,74 @@ int port-channel <1-12>
 switchport mode trunk
 ```
 
+# Маршрутизатор, как L3 коммутатор
+```
+en
+conf t
+int fa0/0
+no sh
+```
+
+```
+en conf t
+int fa0/0.2
+encapsulation dot1Q 2
+ip address 2.2.2.1 255.255.255.0
+no sh
+```
+
+# Соединение маршрутизатора с L3 коммутатором
+L3 Switch:
+```
+en
+conf t
+vlan 5
+name router
+exit
+int vlan 5
+ip address 5.5.5.2 255.255.255.0
+no sh
+exit
+int Router
+switchport mode access
+switchport access vlan 5
+```
+
+Router:
+```
+en
+conf t
+int fa0/0
+ip address 5.5.5.1 255.255.255.0
+no sh
+exit
+ping 5.5.5.1
+```
+
+# Указать маршрутизатору путь к ПК через L3
+Router:
+```
+en
+conf t
+ip route 2.2.2.0 255.255.255.0 5.5.5.2
+ip route 3.3.3.0 255.255.255.0 5.5.5.2
+ip route 4.4.4.0 255.255.255.0 5.5.5.2
+```
+
+# Соединить маршрутизаторы
+Router:
+```
+en
+conf t
+int Router1
+ip address 7.7.7.1 255.255.255.252
+no sh
+```
+Router1:
+```
+en
+conf t
+int Router1
+ip address 7.7.7.2 255.255.255.252
+no sh
+```
